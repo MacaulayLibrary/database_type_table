@@ -48,6 +48,10 @@ module DatabaseTypeTable
           def_name.gsub!(/\//, '_')
           def_name.gsub!(/[^a-zA-Z0-9_]/, '')
 
+          # Prepend an underscore to the constant name if it starts with a
+          # number, so that it is a valid Ruby identifier
+          def_name.prepend 'N_' if def_name =~ /\A\d/
+
           upcase_name = def_name.upcase
           url_name    = def_name.downcase
           self.const_set("#{upcase_name}_ID", myid)

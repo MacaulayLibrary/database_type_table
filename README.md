@@ -63,6 +63,9 @@ MediaType::AUDIO_URL                = 'audio'
 MediaType::VIDEO_URL                = 'video'
 MediaType::VIDEO_WITHOUT_SOUND_URL  = 'video-without-sound'
 ```
+(Note that constant names that would otherwise start with a numeric digit will
+have the prefix `N_` added, to make it into a valid Ruby identifier, e.g.
+`BitDepth::N_128`)
 
 And these methods are available for iterating through the types
 
